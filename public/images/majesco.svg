@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .st1 { fill: #0d4d88; }
+      .st3 { fill: #4fb9bd; }
+      .st4 { fill: #90c06a; }
+    </style>
+  </defs>
+
+  <!-- Green piece -->
+  <path class="st4" d="M1.1,21.7l12.5-12.5c1.5-1.5,3.8-1.5,5.3,0s1.5,3.9,0,5.3L6.4,27c-1.5,1.5-3.9,1.5-5.3,0s-1.5-3.9,0-5.3Z"/>
+
+  <!-- Teal piece -->
+  <path class="st3" d="M13.6,21.7L26.1,9.2c1.5-1.5,3.9-1.5,5.3,0s1.5,3.9,0,5.3L18.9,27c-1.5,1.5-3.8,1.5-5.3,0s-1.5-3.9,0-5.3Z"/>
+
+  <!-- Blue rotated rectangle -->
+  <rect class="st1" x="24.2" y="18.5" width="13.4" height="7.5" rx="3.8" ry="3.8"
+        transform="translate(-6.7 28.4) rotate(-45)"/>
+</svg>

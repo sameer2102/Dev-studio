@@ -1,0 +1,51 @@
+<section class="p-6 bg-transparent text-white sm:px-12">
+    <h2 class="text-xl font-bold mb-4">Lines of business</h2>
+  
+    <!-- Scrollable Cards -->
+    <div
+      #scrollContainer
+      class="flex flex-nowrap md:flex-wrap md:justify-start gap-4 overflow-x-auto md:overflow-visible pb-2 scroll-smooth"
+      (scroll)="onScroll()"
+    >
+      @for (line of linesOfBusiness(); track $index) {
+        <div class="bg-white rounded-2xl shadow-md w-44 h-50 flex-shrink-0 text-black relative overflow-hidden">
+          <!-- Heart Icon -->
+          <button
+            class="absolute top-4 right-4 text-xl cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110 active:scale-125 focus:scale-125"
+            [class]="line.favorite ? 'fas fa-heart text-[#E86DA3]' : 'far fa-heart text-gray-400'"
+            (click)="toggleFavorite($index)"
+            tabindex="0"
+          ></button>
+  
+          <!-- Centered Content -->
+          <div class="flex flex-col items-center justify-center h-full pb-12 px-2 text-center">
+            <div class="bg-teal-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-base font-semibold mb-2">
+              {{ line.code }}
+            </div>
+            <div class="text-sm font-semibold leading-snug">
+              {{ line.name }}
+            </div>
+          </div>
+  
+          <!-- Bottom Release Notes -->
+          <div class="absolute bottom-0 left-0 right-0 bg-blue-50 py-2 text-center">
+            <a href="#" class="text-blue-600 text-xs font-medium hover:underline">Release Notes</a>
+          </div>
+        </div>
+      }
+    </div>
+  
+    <!-- Dot Indicators -->
+    @if (scrollDots().length > 1) {
+      <div class="flex justify-center mt-4 space-x-2">
+        @for (dot of scrollDots(); track $index; let i = $index) {
+          <button
+            class="w-3 h-3 rounded-full transition-colors duration-300"
+            [class]="i === activeDot() ? 'bg-blue-700' : 'bg-gray-300'"
+            (click)="scrollToDot(i)"
+          ></button>
+        }
+      </div>
+    }
+  </section>
+  
